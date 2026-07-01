@@ -12,6 +12,8 @@ set -e
 cd ~/start-repo
 git pull origin main
 
-cp index.html huisstijl.css style.css script.js /var/www/start/
+# /var/www/start/ is root-eigendom (net als bij de andere pagina's); daarom
+# hiervoor sudo. git pull hierboven blijft als gewone gebruiker draaien.
+sudo cp index.html huisstijl.css style.css script.js /var/www/start/
 
 echo "Gepubliceerd: Start bijgewerkt op /var/www/start/."
