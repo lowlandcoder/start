@@ -1,0 +1,178 @@
+/* Pagina-eigen opmaak voor de Lab023-startpagina.
+   De gedeelde huisstijl staat in huisstijl.css en wordt eerder ingeladen.
+   Hier staat alleen de opmaak van de kop, de zoekbalk en het kaartrooster. */
+
+.topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.groet {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.klok {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  padding-top: 4px;
+  white-space: nowrap;
+}
+
+/* Zoekbalk */
+.zoekbalk {
+  position: relative;
+  margin-bottom: 20px;
+}
+.zoek-icoon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: none;
+  stroke: var(--muted);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+#zoekveld {
+  width: 100%;
+  color: var(--tekst);
+  background: rgba(5, 18, 39, .55);
+  border: 1px solid var(--rand);
+  border-radius: 14px;
+  padding: 12px 14px 12px 42px;
+  font-size: 14px;
+  transition: border-color .15s, background .15s;
+}
+#zoekveld::placeholder { color: var(--muted); }
+#zoekveld:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(5, 18, 39, .8);
+}
+
+/* Kaartrooster */
+.rooster {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+@media (max-width: 760px) { .rooster { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rooster { grid-template-columns: 1fr; } }
+
+.pagina-kaart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+  text-align: left;
+  text-decoration: none;
+  color: var(--tekst);
+  cursor: pointer;
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.pagina-kaart:hover,
+.pagina-kaart:focus-visible {
+  transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, .24);
+  background: rgba(255, 255, 255, .05);
+}
+.pagina-kaart:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+.pagina-kaart.verborgen { display: none; }
+
+.pagina-kaart.uitgeschakeld {
+  cursor: default;
+  opacity: .6;
+}
+.pagina-kaart.uitgeschakeld:hover { transform: none; border-color: var(--rand); background: var(--kaart); }
+
+.pagina-kop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.pagina-icoon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  color: var(--accent);
+  background: rgba(77, 171, 247, .12);
+}
+.pagina-icoon svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sneltoets {
+  flex: 0 0 auto;
+  min-width: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border: 1px solid var(--rand);
+  border-radius: 6px;
+}
+
+.pagina-naam {
+  font-size: 15px;
+  font-weight: 600;
+}
+.pagina-naam em {
+  color: var(--accent);
+  font-style: normal;
+}
+.pagina-omschrijving {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.badge {
+  align-self: flex-start;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 3px 8px;
+  border: 1px solid var(--rand);
+  border-radius: 999px;
+}
+.badge.badge-lokaal { color: var(--gas); border-color: rgba(244, 162, 97, .4); }
+
+.geen-resultaat {
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.voettekst {
+  color: var(--muted);
+  font-size: 11.5px;
+  text-align: center;
+  margin-top: 22px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pagina-kaart { transition: none; }
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061225">
+  <meta name="description" content="Startpagina van het Lab023-platform, met alle pagina's op één plek.">
+  <title>Lab023 — Start</title>
+  <link rel="stylesheet" href="huisstijl.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <h1 class="merk">Lab<em>023</em></h1>
+        <p class="groet" id="groet">Overzicht van alle pagina's op het platform.</p>
+      </div>
+      <div class="klok" id="klok" aria-hidden="true"></div>
+    </header>
+
+    <div class="zoekbalk">
+      <svg class="zoek-icoon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+        <circle cx="11" cy="11" r="7"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <input
+        id="zoekveld"
+        type="text"
+        placeholder="Zoek een pagina… (druk op / om te beginnen)"
+        autocomplete="off"
+        aria-label="Zoek een pagina">
+    </div>
+
+    <div id="rooster" class="rooster"></div>
+    <p id="geenResultaat" class="geen-resultaat" hidden>Geen pagina gevonden.</p>
+
+    <p class="voettekst">Klik op een kaart, gebruik de cijfertoetsen 1–8 of typ om te zoeken.</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
