@@ -18,7 +18,8 @@ const PAGINAS = [
   { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar" },
   { id: "wijn",      naam: "Wijn",      domein: "https://mijnwijn.lab023.nl",      omschrijving: "Overzicht van favoriete wijnen.", icoon: "wijn" },
   { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht" },
-  { id: "huis",      naam: "Huis",      domein: "https://mijnhuis.lab023.nl",      omschrijving: "Beheerpagina voor de Zigbee-stekker, draait in een eigen docker.", icoon: "huis", badge: "Afgeschermd" }
+  { id: "huis",      naam: "Huis",      domein: "https://mijnhuis.lab023.nl",      omschrijving: "Beheerpagina voor de Zigbee-stekker, draait in een eigen docker.", icoon: "huis", badge: "Afgeschermd" },
+  { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", badge: "Afgeschermd" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -30,7 +31,8 @@ const ICONEN = {
   radar: '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor"></circle><path d="M12 3v3M21 12h-3"></path>',
   wijn: '<path d="M8 3h8l-1 7a3 3 0 0 1-6 0L8 3z"></path><path d="M12 13v6M9 21h6"></path>',
   licht: '<path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.44 1 1.15 1 1.9V16h5v-.2c0-.75.4-1.46 1-1.9A6 6 0 0 0 12 3z"></path>',
-  huis: '<path d="M4 11 12 4l8 7"></path><path d="M6 10v9h12v-9"></path>'
+  huis: '<path d="M4 11 12 4l8 7"></path><path d="M6 10v9h12v-9"></path>',
+  zigbee: '<circle cx="6" cy="18" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="18" cy="18" r="2"></circle><path d="M7.5 16.5 10.5 7.5M13.5 7.5 16.5 16.5M8 18h8"></path>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
