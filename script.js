@@ -18,7 +18,7 @@ const PAGINAS = [
   { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar" },
   { id: "wijn",      naam: "Wijn",      domein: "https://mijnwijn.lab023.nl",      omschrijving: "Overzicht van favoriete wijnen.", icoon: "wijn" },
   { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht" },
-  { id: "zigbee2mqtt", naam: "Zigbee2MQTT", domein: "https://zigbee2mqtt.lab023.nl", omschrijving: "Beheerpagina voor de Zigbee-stekker, draait in een eigen docker.", icoon: "huis", badge: "Afgeschermd", extern: true }
+  { id: "huis",      naam: "Huis",      domein: "https://mijnhuis.lab023.nl",      omschrijving: "Beheerpagina voor de Zigbee-stekker, draait in een eigen docker.", icoon: "huis", badge: "Afgeschermd" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -75,6 +75,8 @@ function maakKaart(pagina, index) {
   kaart.className = "kaart pagina-kaart" + (pagina.lokaal ? " uitgeschakeld" : "");
   if (!pagina.lokaal) {
     kaart.href = pagina.domein;
+    kaart.target = "_blank";
+    kaart.rel = "noopener";
     kaart.dataset.id = pagina.id;
   }
   kaart.dataset.naam = pagina.naam.toLowerCase();
@@ -161,7 +163,7 @@ function zetSneltoetsen() {
       const pagina = volgordeVoorSneltoetsen[cijfer - 1];
       if (pagina && !pagina.lokaal) {
         bewaarBezoek(pagina.id);
-        window.location.href = pagina.domein;
+        window.open(pagina.domein, "_blank", "noopener");
       }
     }
   });
