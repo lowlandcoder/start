@@ -21,7 +21,8 @@ const PAGINAS = [
   { id: "huis",      naam: "Huis",      domein: "https://mijnhuis.lab023.nl",      omschrijving: "Beheerpagina voor de Zigbee-stekker, draait in een eigen docker.", icoon: "huis", badge: "Afgeschermd" },
   { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", badge: "Afgeschermd" },
   { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", badge: "Afgeschermd" },
-  { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" }
+  { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
+  { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -36,7 +37,8 @@ const ICONEN = {
   huis: '<path d="M4 11 12 4l8 7"></path><path d="M6 10v9h12v-9"></path>',
   zigbee: '<circle cx="6" cy="18" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="18" cy="18" r="2"></circle><path d="M7.5 16.5 10.5 7.5M13.5 7.5 16.5 16.5M8 18h8"></path>',
   pihole: '<path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3z"></path><path d="M9 12h6"></path>',
-  verkeer: '<path d="M3 13h3l2-6 4 12 3-9 2 3h4"></path>'
+  verkeer: '<path d="M3 13h3l2-6 4 12 3-9 2 3h4"></path>',
+  agenda: '<rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16"></path><circle cx="12" cy="15" r=".8" fill="currentColor"></circle>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
