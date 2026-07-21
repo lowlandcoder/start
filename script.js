@@ -22,7 +22,8 @@ const PAGINAS = [
   { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", badge: "Afgeschermd" },
   { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", badge: "Afgeschermd" },
   { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
-  { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" }
+  { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" },
+  { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -38,7 +39,8 @@ const ICONEN = {
   zigbee: '<circle cx="6" cy="18" r="2"></circle><circle cx="12" cy="6" r="2"></circle><circle cx="18" cy="18" r="2"></circle><path d="M7.5 16.5 10.5 7.5M13.5 7.5 16.5 16.5M8 18h8"></path>',
   pihole: '<path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6l7-3z"></path><path d="M9 12h6"></path>',
   verkeer: '<path d="M3 13h3l2-6 4 12 3-9 2 3h4"></path>',
-  agenda: '<rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16"></path><circle cx="12" cy="15" r=".8" fill="currentColor"></circle>'
+  agenda: '<rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16"></path><circle cx="12" cy="15" r=".8" fill="currentColor"></circle>',
+  portainer: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M4 7.5l8 4.5 8-4.5M12 12v9"></path>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
