@@ -24,7 +24,8 @@ const PAGINAS = [
   { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
   { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" },
   { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" },
-  { id: "sdr",       naam: "SDR",       domein: "https://mijnsdr.lab023.nl",       omschrijving: "Overzicht van de SDR-experimenten op de sdr-server.", icoon: "sdr", badge: "Afgeschermd" }
+  { id: "sdr",       naam: "SDR",       domein: "https://mijnsdr.lab023.nl",       omschrijving: "Overzicht van de SDR-experimenten op de sdr-server.", icoon: "sdr", badge: "Afgeschermd" },
+  { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -42,7 +43,8 @@ const ICONEN = {
   verkeer: '<path d="M3 13h3l2-6 4 12 3-9 2 3h4"></path>',
   agenda: '<rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16"></path><circle cx="12" cy="15" r=".8" fill="currentColor"></circle>',
   portainer: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M4 7.5l8 4.5 8-4.5M12 12v9"></path>',
-  sdr: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>'
+  sdr: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>',
+  recept: '<path d="M6 3v7a3 3 0 0 0 6 0V3M9 3v18"></path><path d="M17 3c-1.5 1-2.5 3-2.5 5.5S15.5 13 17 14v7"></path>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
