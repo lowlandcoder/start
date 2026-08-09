@@ -26,7 +26,8 @@ const PAGINAS = [
   { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" },
   { id: "sdr",       naam: "SDR",       domein: "https://mijnsdr.lab023.nl",       omschrijving: "Overzicht van de SDR-experimenten op de sdr-server.", icoon: "sdr", badge: "Afgeschermd" },
   { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" },
-  { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" }
+  { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" },
+  { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -46,7 +47,8 @@ const ICONEN = {
   portainer: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M4 7.5l8 4.5 8-4.5M12 12v9"></path>',
   sdr: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>',
   recept: '<path d="M6 3v7a3 3 0 0 0 6 0V3M9 3v18"></path><path d="M17 3c-1.5 1-2.5 3-2.5 5.5S15.5 13 17 14v7"></path>',
-  syncthing: '<path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"></path><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"></path><path d="M17.5 3.2v3.5H14M6.5 20.8v-3.5H10"></path>'
+  syncthing: '<path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"></path><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"></path><path d="M17.5 3.2v3.5H14M6.5 20.8v-3.5H10"></path>',
+  boodschappen: '<path d="M4 8h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 8z"></path><path d="M8.5 8V6a3.5 3.5 0 0 1 7 0v2"></path><path d="M9.5 12v4M14.5 12v4"></path>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
