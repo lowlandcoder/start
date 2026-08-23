@@ -28,7 +28,9 @@ const PAGINAS = [
   { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" },
   { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" },
   { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" },
-  { id: "ais",       naam: "AIS",       domein: "https://mijnais.lab023.nl",       omschrijving: "Scheepsradar op basis van AIS-ontvangst met een RTL-SDR stick.", icoon: "ais", badge: "Afgeschermd" }
+  { id: "ais",       naam: "AIS",       domein: "https://mijnais.lab023.nl",       omschrijving: "Scheepsradar op basis van AIS-ontvangst met een RTL-SDR stick.", icoon: "ais", badge: "Afgeschermd" },
+  { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", badge: "Afgeschermd" },
+  { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -50,7 +52,9 @@ const ICONEN = {
   sdr: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>',
   recept: '<path d="M6 3v7a3 3 0 0 0 6 0V3M9 3v18"></path><path d="M17 3c-1.5 1-2.5 3-2.5 5.5S15.5 13 17 14v7"></path>',
   syncthing: '<path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"></path><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"></path><path d="M17.5 3.2v3.5H14M6.5 20.8v-3.5H10"></path>',
-  boodschappen: '<path d="M4 8h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 8z"></path><path d="M8.5 8V6a3.5 3.5 0 0 1 7 0v2"></path><path d="M9.5 12v4M14.5 12v4"></path>'
+  boodschappen: '<path d="M4 8h16l-1.4 11.2a2 2 0 0 1-2 1.8H7.4a2 2 0 0 1-2-1.8L4 8z"></path><path d="M8.5 8V6a3.5 3.5 0 0 1 7 0v2"></path><path d="M9.5 12v4M14.5 12v4"></path>',
+  retrogames: '<rect x="2.5" y="7" width="19" height="10" rx="5"></rect><path d="M7 10v4M5 12h4"></path><circle cx="16" cy="11" r=".9" fill="currentColor"></circle><circle cx="18.5" cy="13.5" r=".9" fill="currentColor"></circle>',
+  snake: '<path d="M5 6h5.5a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h5"></path><circle cx="15.5" cy="18" r="2.2"></circle><circle cx="16.4" cy="17.4" r=".55" fill="currentColor"></circle><circle cx="19" cy="6.5" r="1.4" fill="currentColor"></circle>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
