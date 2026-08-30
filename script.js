@@ -22,6 +22,7 @@ const PAGINAS = [
   { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", badge: "Afgeschermd" },
   { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", badge: "Afgeschermd" },
   { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
+  { id: "epaper",    naam: "EPaper",    domein: "https://mijnepaper.lab023.nl", omschrijving: "Bedient het ePaper-scherm aan de muur: schema per uur.", icoon: "epaper", badge: "Afgeschermd" },
   { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" },
   { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" },
   { id: "sdr",       naam: "SDR",       domein: "https://mijnsdr.lab023.nl",       omschrijving: "Overzicht van de SDR-experimenten op de sdr-server.", icoon: "sdr", badge: "Afgeschermd" },
@@ -35,6 +36,7 @@ const PAGINAS = [
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
 const ICONEN = {
+  epaper: '<rect x="3" y="5" width="18" height="13" rx="1.5"></rect><path d="M6 9h7M6 12h5M6 15h8"></path><circle cx="17" cy="9.5" r="1.6"></circle>',
   weer: '<circle cx="9" cy="15" r="4"></circle><path d="M13 15h4a3 3 0 0 0 0-6 5 5 0 0 0-9.6-1.5"></path>',
   radio: '<circle cx="12" cy="15" r="2"></circle><path d="M7 11a7 7 0 0 1 10 0M4 8a11 11 0 0 1 16 0"></path>',
   verbruik: '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path>',
