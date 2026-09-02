@@ -29,7 +29,6 @@ const PAGINAS = [
   { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" },
   { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" },
   { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" },
-  { id: "ais",       naam: "AIS",       domein: "https://mijnais.lab023.nl",       omschrijving: "Scheepsradar op basis van AIS-ontvangst met een RTL-SDR stick.", icoon: "ais", badge: "Afgeschermd" },
   { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", badge: "Afgeschermd" },
   { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake" }
 ];
@@ -50,7 +49,6 @@ const ICONEN = {
   verkeer: '<path d="M3 13h3l2-6 4 12 3-9 2 3h4"></path>',
   agenda: '<rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M8 3v4M16 3v4M4 10h16"></path><circle cx="12" cy="15" r=".8" fill="currentColor"></circle>',
   portainer: '<path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"></path><path d="M4 7.5l8 4.5 8-4.5M12 12v9"></path>',
-  ais: '<path d="M4 16h16l-2.2 4H6.2L4 16z"></path><path d="M7.5 16v-4h5.5l3.5 4"></path><path d="M12 12V8"></path><circle cx="12" cy="7.4" r=".9" fill="currentColor"></circle><path d="M9.7 5.6a3.2 3.2 0 0 1 4.6 0"></path><path d="M7.9 3.6a5.8 5.8 0 0 1 8.2 0"></path>',
   sdr: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>',
   recept: '<path d="M6 3v7a3 3 0 0 0 6 0V3M9 3v18"></path><path d="M17 3c-1.5 1-2.5 3-2.5 5.5S15.5 13 17 14v7"></path>',
   syncthing: '<path d="M4.5 12a7.5 7.5 0 0 1 12.8-5.3"></path><path d="M19.5 12a7.5 7.5 0 0 1-12.8 5.3"></path><path d="M17.5 3.2v3.5H14M6.5 20.8v-3.5H10"></path>',
