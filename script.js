@@ -31,11 +31,13 @@ const PAGINAS = [
   { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" },
   { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", badge: "Afgeschermd" },
   { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake" },
+  { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
 const ICONEN = {
+  esp32: '<rect x="6" y="6" width="12" height="12" rx="1.5"></rect><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"></path><circle cx="12" cy="12" r="1.1" fill="currentColor"></circle>',
   epaper: '<rect x="3" y="5" width="18" height="13" rx="1.5"></rect><path d="M6 9h7M6 12h5M6 15h8"></path><circle cx="17" cy="9.5" r="1.6"></circle>',
   weer: '<circle cx="9" cy="15" r="4"></circle><path d="M13 15h4a3 3 0 0 0 0-6 5 5 0 0 0-9.6-1.5"></path>',
   radio: '<circle cx="12" cy="15" r="2"></circle><path d="M7 11a7 7 0 0 1 10 0M4 8a11 11 0 0 1 16 0"></path>',
