@@ -13,6 +13,7 @@
 const PAGINAS = [
   { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer" },
   { id: "radio",     naam: "Radio",     domein: "https://mijnradio.lab023.nl",     omschrijving: "Twaalf favoriete internetradiostations.", icoon: "radio" },
+  { id: "muziek",    naam: "Muziek",    domein: "https://mijnmuziek.lab023.nl",    omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
   { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik" },
   { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", badge: "Afgeschermd" },
   { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar" },
@@ -44,6 +45,7 @@ const ICONEN = {
   epaper: '<rect x="3" y="5" width="18" height="13" rx="1.5"></rect><path d="M6 9h7M6 12h5M6 15h8"></path><circle cx="17" cy="9.5" r="1.6"></circle>',
   weer: '<circle cx="9" cy="15" r="4"></circle><path d="M13 15h4a3 3 0 0 0 0-6 5 5 0 0 0-9.6-1.5"></path>',
   radio: '<circle cx="12" cy="15" r="2"></circle><path d="M7 11a7 7 0 0 1 10 0M4 8a11 11 0 0 1 16 0"></path>',
+  muziek: '<path d="M9 18V5l11-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="17" cy="16" r="3"></circle>',
   verbruik: '<path d="M13 2 4 14h6l-1 8 9-12h-6l1-8z"></path>',
   server: '<rect x="4" y="4" width="16" height="6" rx="1.5"></rect><rect x="4" y="14" width="16" height="6" rx="1.5"></rect><circle cx="8" cy="7" r=".6" fill="currentColor"></circle><circle cx="8" cy="17" r=".6" fill="currentColor"></circle>',
   radar: '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.2" fill="currentColor"></circle><path d="M12 3v3M21 12h-3"></path>',
