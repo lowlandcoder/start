@@ -34,6 +34,7 @@ const PAGINAS = [
   { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", badge: "Afgeschermd" },
   { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake" },
   { id: "type",      naam: "Type",      domein: "https://mijntype.lab023.nl",      omschrijving: "Spelenderwijs blind leren typen, met top 20 per niveau.", icoon: "type" },
+  { id: "klaverjas", naam: "Klaverjas", domein: "https://mijnklaverjas.lab023.nl", omschrijving: "Amsterdams klaverjassen tegen drie computerspelers.", icoon: "klaverjas" },
   { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
   { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", badge: "Afgeschermd" },
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
@@ -66,7 +67,8 @@ const ICONEN = {
   retrogames: '<rect x="2.5" y="7" width="19" height="10" rx="5"></rect><path d="M7 10v4M5 12h4"></path><circle cx="16" cy="11" r=".9" fill="currentColor"></circle><circle cx="18.5" cy="13.5" r=".9" fill="currentColor"></circle>',
   lab023: '<rect x="3" y="14" width="18" height="6" rx="1.5"></rect><circle cx="6.5" cy="17" r=".6" fill="currentColor"></circle><path d="M12 14V4"></path><path d="M9.5 6.5h5M10.5 9h3"></path>',
   snake: '<path d="M5 6h5.5a3 3 0 0 1 0 6H8a3 3 0 0 0 0 6h5"></path><circle cx="15.5" cy="18" r="2.2"></circle><circle cx="16.4" cy="17.4" r=".55" fill="currentColor"></circle><circle cx="19" cy="6.5" r="1.4" fill="currentColor"></circle>',
-  type: '<rect x="2.5" y="6" width="19" height="12" rx="2"></rect><path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M6 13h.01M18 13h.01M8 15h8"></path><path d="M10.5 13h3"></path>'
+  type: '<rect x="2.5" y="6" width="19" height="12" rx="2"></rect><path d="M6 10h.01M9 10h.01M12 10h.01M15 10h.01M18 10h.01M6 13h.01M18 13h.01M8 15h8"></path><path d="M10.5 13h3"></path>',
+  klaverjas: '<rect x="5" y="3" width="14" height="18" rx="2"></rect><circle cx="12" cy="9.3" r="1.9"></circle><circle cx="9.7" cy="12.8" r="1.9"></circle><circle cx="14.3" cy="12.8" r="1.9"></circle><path d="M12 12.5v4.3M10.4 16.8h3.2"></path>'
 };
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
