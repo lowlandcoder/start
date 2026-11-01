@@ -35,10 +35,11 @@ op de startpagina. De adressen van de sites blijven ongewijzigd.
 Zoeken blijft over alle pagina's gaan, ook die in een groep, en ook op de naam van
 de groep ("weerstation" toont de drie kaarten).
 
-Op dit moment zijn er twee groepen:
+Op dit moment zijn er drie groepen:
 
 - `weerstation`: Weer, Radar en Onweer.
 - `homeautomation`: HomeAssistant, Thuis, Verbruik, Eufy, EPaper en Zigbee.
+- `muziek`: Radio, MusicGrabber, Mornye en NowPlaying.
 
 ## Interactie
 

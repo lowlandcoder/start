@@ -14,10 +14,10 @@
    ================================================================ */
 const PAGINAS = [
   { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer", categorie: "weerstation" },
-  { id: "radio",     naam: "Radio",     domein: "https://mijnradio.lab023.nl",     omschrijving: "Twaalf favoriete internetradiostations.", icoon: "radio" },
-  { id: "musicgrabber", naam: "MusicGrabber", domein: "https://mijnmusicgrabber.lab023.nl", omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
-  { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast MusicGrabber.", icoon: "mornye", badge: "Afgeschermd" },
-  { id: "nowplaying", naam: "NowPlaying", domein: "https://nowplaying.lab023.nl", omschrijving: "Kioskscherm met albumhoes en artiest van wat er nu speelt.", icoon: "nowplaying", badge: "Afgeschermd" },
+  { id: "radio",     naam: "Radio",     domein: "https://mijnradio.lab023.nl",     omschrijving: "Twaalf favoriete internetradiostations.", icoon: "radio", categorie: "muziek" },
+  { id: "musicgrabber", naam: "MusicGrabber", domein: "https://mijnmusicgrabber.lab023.nl", omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", categorie: "muziek", badge: "Afgeschermd" },
+  { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast MusicGrabber.", icoon: "mornye", categorie: "muziek", badge: "Afgeschermd" },
+  { id: "nowplaying", naam: "NowPlaying", domein: "https://nowplaying.lab023.nl", omschrijving: "Kioskscherm met albumhoes en artiest van wat er nu speelt.", icoon: "nowplaying", categorie: "muziek", badge: "Afgeschermd" },
   { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik", categorie: "homeautomation" },
   { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", badge: "Afgeschermd" },
@@ -52,7 +52,8 @@ const PAGINAS = [
    en opent een eigen weergave (start.lab023.nl/#<id>) met de kaarten van de groep. */
 const CATEGORIEEN = [
   { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" },
-  { id: "homeautomation", naam: "HomeAutomation", omschrijving: "Slimme stekkers, sensoren, camera, energieverbruik en het scherm aan de muur.", icoon: "homeassistant" }
+  { id: "homeautomation", naam: "HomeAutomation", omschrijving: "Slimme stekkers, sensoren, camera, energieverbruik en het scherm aan de muur.", icoon: "homeassistant" },
+  { id: "muziek", naam: "Muziek", omschrijving: "Internetradio, muziek ophalen en wat er nu speelt.", icoon: "muziek" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
