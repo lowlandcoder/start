@@ -1,7 +1,7 @@
 # Start
 
 Startpagina van het Lab023-platform (`start.lab023.nl`). Toont een kaart per
-pagina van het platform, met zoekfilter, sneltoetsen en een volgorde die
+pagina van het platform, met zoekfilter, een sneltoets voor het zoekveld en een volgorde die
 meebeweegt met de meest gebruikte pagina.
 
 ## Onderdelen
@@ -10,7 +10,7 @@ meebeweegt met de meest gebruikte pagina.
 - `huisstijl.css` — de gedeelde Lab023-huisstijl.
 - `style.css` — pagina-eigen opmaak: kop, zoekbalk en kaartrooster.
 - `script.js` — bouwt het rooster op uit de lijst `PAGINAS`, verzorgt de
-  zoekfilter, de sneltoetsen, de begroeting en de klok.
+  zoekfilter, de sneltoets voor het zoekveld, de begroeting en de klok.
 
 ## Pagina's aanpassen
 
@@ -34,7 +34,6 @@ volledig (zie `OVERZICHT.md`); de kaarten linken al wel naar hun subdomein.
 
 - Zoekveld filtert de kaarten direct op naam en omschrijving.
 - Sneltoets `/` focust het zoekveld, `Escape` maakt het weer leeg.
-- Cijfertoetsen 1–9 openen de bijbehorende kaart (in de getoonde volgorde).
 - De volgorde van de kaarten volgt de meest recent bezochte pagina
   (`localStorage`, per apparaat).
 

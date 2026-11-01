@@ -1,5 +1,5 @@
-// Werking van de Lab023-startpagina: rooster opbouwen, zoeken, sneltoetsen,
-// begroeting en volgorde op laatst bezocht.
+// Werking van de Lab023-startpagina: rooster opbouwen, zoeken, sneltoets voor
+// het zoekveld, begroeting en volgorde op laatst bezocht.
 
 /* ================================================================
    PAGINALIJST — hier een pagina toevoegen, aanpassen of verwijderen.
@@ -120,7 +120,7 @@ function gesorteerdeLijst() {
 }
 
 /* Eén kaart opbouwen */
-function maakKaart(pagina, index) {
+function maakKaart(pagina) {
   const kaart = document.createElement(pagina.lokaal ? "div" : "a");
   kaart.className = "kaart pagina-kaart" + (pagina.lokaal ? " uitgeschakeld" : "");
   if (!pagina.lokaal) {
@@ -139,12 +139,7 @@ function maakKaart(pagina, index) {
   icoon.className = "pagina-icoon";
   icoon.innerHTML = `<svg viewBox="0 0 24 24">${ICONEN[pagina.icoon] || ""}</svg>`;
 
-  const sneltoets = document.createElement("span");
-  sneltoets.className = "sneltoets";
-  sneltoets.textContent = index < 9 ? String(index + 1) : "";
-
   kop.appendChild(icoon);
-  if (index < 9) kop.appendChild(sneltoets);
 
   const naam = document.createElement("div");
   naam.className = "pagina-naam";
@@ -172,13 +167,10 @@ function maakKaart(pagina, index) {
 }
 
 /* Rooster opbouwen, in volgorde van laatst bezocht */
-let volgordeVoorSneltoetsen = [];
 function bouwRooster() {
   const rooster = $("rooster");
   rooster.innerHTML = "";
-  const lijst = gesorteerdeLijst();
-  volgordeVoorSneltoetsen = lijst;
-  lijst.forEach((pagina, i) => rooster.appendChild(maakKaart(pagina, i)));
+  gesorteerdeLijst().forEach((pagina) => rooster.appendChild(maakKaart(pagina)));
 }
 
 /* Zoekfilter: typen filtert de kaarten direct op naam en omschrijving */
@@ -196,7 +188,7 @@ function filterRooster() {
   $("geenResultaat").hidden = zichtbaar !== 0;
 }
 
-/* Sneltoetsen: cijfers 1–8 openen de bijbehorende pagina, "/" focust het zoekveld */
+/* Sneltoets: "/" focust het zoekveld, Escape maakt het weer leeg */
 function zetSneltoetsen() {
   document.addEventListener("keydown", (e) => {
     if (e.target === $("zoekveld")) {
@@ -207,14 +199,6 @@ function zetSneltoetsen() {
       e.preventDefault();
       $("zoekveld").focus();
       return;
-    }
-    const cijfer = Number(e.key);
-    if (cijfer >= 1 && cijfer <= 9) {
-      const pagina = volgordeVoorSneltoetsen[cijfer - 1];
-      if (pagina && !pagina.lokaal) {
-        bewaarBezoek(pagina.id);
-        window.open(pagina.domein, "_blank", "noopener");
-      }
     }
   });
 }
