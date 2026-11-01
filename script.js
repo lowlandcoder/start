@@ -8,10 +8,11 @@
    eventueel badge ("Afgeschermd" e.d.), extern (true = geen "Mijn"-voorvoegsel,
    voor een pagina die niet de eigen huisstijl gebruikt, zoals zigbee2mqtt)
    en lokaal (true = geen directe link, alleen bereikbaar binnen het eigen
-   netwerk).
+   netwerk). Met categorie (id uit CATEGORIEEN) komt de kaart onder een kop;
+   zonder categorie staat de kaart na de groepen.
    ================================================================ */
 const PAGINAS = [
-  { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer" },
+  { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer", categorie: "weerstation" },
   { id: "radio",     naam: "Radio",     domein: "https://mijnradio.lab023.nl",     omschrijving: "Twaalf favoriete internetradiostations.", icoon: "radio" },
   { id: "muziek",    naam: "Muziek",    domein: "https://mijnmuziek.lab023.nl",    omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
   { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast Muziek.", icoon: "mornye", badge: "Afgeschermd" },
@@ -19,8 +20,8 @@ const PAGINAS = [
   { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", badge: "Afgeschermd" },
   { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik" },
   { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", badge: "Afgeschermd" },
-  { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar" },
-  { id: "onweer",    naam: "Onweer",    domein: "https://mijnonweer.lab023.nl",    omschrijving: "Bliksem in Nederland van de afgelopen twee uur.", icoon: "onweer" },
+  { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar", categorie: "weerstation" },
+  { id: "onweer",    naam: "Onweer",    domein: "https://mijnonweer.lab023.nl",    omschrijving: "Bliksem in Nederland van de afgelopen twee uur.", icoon: "onweer", categorie: "weerstation" },
   { id: "wijn",      naam: "Wijn",      domein: "https://mijnwijn.lab023.nl",      omschrijving: "Overzicht van favoriete wijnen.", icoon: "wijn" },
   { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht" },
   { id: "homeassistant", naam: "HomeAssistant", domein: "https://mijnhomeassistant.lab023.nl", omschrijving: "Bediening van de slimme stekkers en sensoren, met eigen inlog en app.", icoon: "homeassistant", badge: "Eigen inlog" },
@@ -44,6 +45,11 @@ const PAGINAS = [
   { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
   { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", badge: "Afgeschermd" },
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
+];
+
+/* Categorieën in vaste volgorde. De naam komt na "Mijn" in de kop van de groep. */
+const CATEGORIEEN = [
+  { id: "weerstation", naam: "Weerstation" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -166,11 +172,37 @@ function maakKaart(pagina) {
   return kaart;
 }
 
-/* Rooster opbouwen, in volgorde van laatst bezocht */
+/* Eén groep opbouwen: een sectie met (eventueel) een kop en een raster kaarten */
+function maakGroep(kopNaam, paginas, id) {
+  const groep = document.createElement("section");
+  groep.className = "groep";
+  groep.dataset.groep = id;
+  if (kopNaam) {
+    const kop = document.createElement("h2");
+    kop.className = "groep-kop";
+    kop.innerHTML = `Mijn<em>${kopNaam}</em>`;
+    groep.appendChild(kop);
+    groep.setAttribute("aria-label", "Mijn" + kopNaam);
+  }
+  const raster = document.createElement("div");
+  raster.className = "groep-rooster";
+  paginas.forEach((pagina) => raster.appendChild(maakKaart(pagina)));
+  groep.appendChild(raster);
+  return groep;
+}
+
+/* Rooster opbouwen: eerst de categorieën in vaste volgorde, daarna de kaarten
+   zonder categorie. Binnen een groep geldt de volgorde van laatst bezocht. */
 function bouwRooster() {
   const rooster = $("rooster");
   rooster.innerHTML = "";
-  gesorteerdeLijst().forEach((pagina) => rooster.appendChild(maakKaart(pagina)));
+  const lijst = gesorteerdeLijst();
+  CATEGORIEEN.forEach((categorie) => {
+    const paginas = lijst.filter((p) => p.categorie === categorie.id);
+    if (paginas.length) rooster.appendChild(maakGroep(categorie.naam, paginas, categorie.id));
+  });
+  const overig = lijst.filter((p) => !CATEGORIEEN.some((c) => c.id === p.categorie));
+  if (overig.length) rooster.appendChild(maakGroep("", overig, "overig"));
 }
 
 /* Zoekfilter: typen filtert de kaarten direct op naam en omschrijving */
@@ -184,6 +216,9 @@ function filterRooster() {
       || kaart.dataset.omschrijving.includes(term);
     kaart.classList.toggle("verborgen", !treft);
     if (treft) zichtbaar++;
+  });
+  document.querySelectorAll(".groep").forEach((groep) => {
+    groep.hidden = !groep.querySelector(".pagina-kaart:not(.verborgen)");
   });
   $("geenResultaat").hidden = zichtbaar !== 0;
 }

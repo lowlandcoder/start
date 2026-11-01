@@ -58,14 +58,31 @@
   background: rgba(5, 18, 39, .8);
 }
 
-/* Kaartrooster */
+/* Kaartrooster: groepen onder elkaar, binnen een groep een raster van kaarten */
 .rooster {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.groep-kop {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin-bottom: 12px;
+}
+.groep-kop em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+.groep-rooster {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 14px;
 }
-@media (max-width: 760px) { .rooster { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .rooster { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .groep-rooster { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .groep-rooster { grid-template-columns: 1fr; } }
 
 .pagina-kaart {
   position: relative;
