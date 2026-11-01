@@ -15,8 +15,8 @@
 const PAGINAS = [
   { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer", categorie: "weerstation" },
   { id: "radio",     naam: "Radio",     domein: "https://mijnradio.lab023.nl",     omschrijving: "Twaalf favoriete internetradiostations.", icoon: "radio" },
-  { id: "muziek",    naam: "Muziek",    domein: "https://mijnmuziek.lab023.nl",    omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
-  { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast Muziek.", icoon: "mornye", badge: "Afgeschermd" },
+  { id: "musicgrabber", naam: "MusicGrabber", domein: "https://mijnmusicgrabber.lab023.nl", omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
+  { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast MusicGrabber.", icoon: "mornye", badge: "Afgeschermd" },
   { id: "nowplaying", naam: "NowPlaying", domein: "https://nowplaying.lab023.nl", omschrijving: "Kioskscherm met albumhoes en artiest van wat er nu speelt.", icoon: "nowplaying", badge: "Afgeschermd" },
   { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik", categorie: "homeautomation" },
