@@ -37,12 +37,12 @@ const PAGINAS = [
   { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" },
   { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" },
   { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" },
-  { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", badge: "Afgeschermd" },
-  { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake" },
-  { id: "type",      naam: "Type",      domein: "https://mijntype.lab023.nl",      omschrijving: "Spelenderwijs blind leren typen, met top 20 per niveau.", icoon: "type" },
-  { id: "klaverjas", naam: "Klaverjas", domein: "https://mijnklaverjas.lab023.nl", omschrijving: "Amsterdams klaverjassen tegen drie computerspelers.", icoon: "klaverjas" },
-  { id: "meowdoku",  naam: "Meowdoku",  domein: "https://mijnmeowdoku.lab023.nl",  omschrijving: "Puzzel met katten: een per rij, kolom en kleur, met top 20.", icoon: "meowdoku" },
-  { id: "rekenen",   naam: "Rekenen",   domein: "https://mijnrekenen.lab023.nl",   omschrijving: "Sommenregen en Tijdrit: oefenen met plus, min, keer en delen, met top 20.", icoon: "rekenen" },
+  { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", categorie: "games", badge: "Afgeschermd" },
+  { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake", categorie: "games" },
+  { id: "type",      naam: "Type",      domein: "https://mijntype.lab023.nl",      omschrijving: "Spelenderwijs blind leren typen, met top 20 per niveau.", icoon: "type", categorie: "games" },
+  { id: "klaverjas", naam: "Klaverjas", domein: "https://mijnklaverjas.lab023.nl", omschrijving: "Amsterdams klaverjassen tegen drie computerspelers.", icoon: "klaverjas", categorie: "games" },
+  { id: "meowdoku",  naam: "Meowdoku",  domein: "https://mijnmeowdoku.lab023.nl",  omschrijving: "Puzzel met katten: een per rij, kolom en kleur, met top 20.", icoon: "meowdoku", categorie: "games" },
+  { id: "rekenen",   naam: "Rekenen",   domein: "https://mijnrekenen.lab023.nl",   omschrijving: "Sommenregen en Tijdrit: oefenen met plus, min, keer en delen, met top 20.", icoon: "rekenen", categorie: "games" },
   { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
   { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
@@ -53,7 +53,8 @@ const PAGINAS = [
 const CATEGORIEEN = [
   { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" },
   { id: "homeautomation", naam: "HomeAutomation", omschrijving: "Slimme stekkers, sensoren, camera, energieverbruik en het scherm aan de muur.", icoon: "homeassistant" },
-  { id: "muziek", naam: "Muziek", omschrijving: "Internetradio, muziek ophalen en wat er nu speelt.", icoon: "muziek" }
+  { id: "muziek", naam: "Muziek", omschrijving: "Internetradio, muziek ophalen en wat er nu speelt.", icoon: "muziek" },
+  { id: "games", naam: "Games", omschrijving: "Kaartspel, puzzels en oefenspellen met een ranglijst.", icoon: "retrogames" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
