@@ -20,22 +20,28 @@ const PAGINAS = [
   { id: "nowplaying", naam: "NowPlaying", domein: "https://nowplaying.lab023.nl", omschrijving: "Kioskscherm met albumhoes en artiest van wat er nu speelt.", icoon: "nowplaying", categorie: "muziek", badge: "Afgeschermd" },
   { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik", categorie: "homeautomation" },
-  { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", badge: "Afgeschermd" },
+  { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", categorie: "beheer", badge: "Afgeschermd" },
   { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar", categorie: "weerstation" },
   { id: "onweer",    naam: "Onweer",    domein: "https://mijnonweer.lab023.nl",    omschrijving: "Bliksem in Nederland van de afgelopen twee uur.", icoon: "onweer", categorie: "weerstation" },
   { id: "wijn",      naam: "Wijn",      domein: "https://mijnwijn.lab023.nl",      omschrijving: "Overzicht van favoriete wijnen.", icoon: "wijn" },
-  { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht" },
+  { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht", categorie: "fotografie" },
   { id: "homeassistant", naam: "HomeAssistant", domein: "https://mijnhomeassistant.lab023.nl", omschrijving: "Bediening van de slimme stekkers en sensoren, met eigen inlog en app.", icoon: "homeassistant", categorie: "homeautomation", badge: "Eigen inlog" },
   { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", categorie: "homeautomation", badge: "Afgeschermd" },
-  { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", badge: "Afgeschermd" },
-  { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
+  { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", categorie: "beheer", badge: "Afgeschermd" },
+  { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", categorie: "beheer", badge: "Afgeschermd" },
   { id: "epaper",    naam: "EPaper",    domein: "https://mijnepaper.lab023.nl", omschrijving: "Bedient het ePaper-scherm aan de muur: schema per uur.", icoon: "epaper", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "kanban",    naam: "Kanban",    domein: "https://mijnkanban.lab023.nl",    omschrijving: "Taken op borden, gescheiden in werk en privé.", icoon: "kanban", badge: "Afgeschermd" },
-  { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" },
-  { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" },
-  { id: "sdr",       naam: "SDR",       domein: "https://mijnsdr.lab023.nl",       omschrijving: "Overzicht van de SDR-experimenten op de sdr-server.", icoon: "sdr", badge: "Afgeschermd" },
+  { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", categorie: "fotografie", badge: "Afgeschermd" },
+  { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", categorie: "beheer", badge: "Afgeschermd" },
+  { id: "adsb", naam: "ADS-B", domein: "https://mijnadsb.lab023.nl", omschrijving: "Vliegtuigen volgen via ADS-B-signalen op 1090 MHz.", icoon: "adsb", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "rtl433", naam: "RTL433", domein: "https://mijnrtl433.lab023.nl", omschrijving: "Sensoren en meters uitlezen op de 433 MHz-band.", icoon: "rtl433", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "p2000", naam: "P2000", domein: "https://mijnp2000.lab023.nl", omschrijving: "Meldingen van de hulpdiensten via het P2000-netwerk.", icoon: "p2000", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "rtl433analyse", naam: "RTL433-analyse", domein: "https://mijnrtl433analyse.lab023.nl", omschrijving: "Omgevingsanalyse van de 433 MHz-ontvangst, met een verversknop.", icoon: "analyse", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "webrx", naam: "WebRX", domein: "https://mijnwebrx.lab023.nl", omschrijving: "Zelf afstemmen op de radiobanden, met waterval en geluid.", icoon: "webrx", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "ais", naam: "AIS", domein: "https://mijnais.lab023.nl", omschrijving: "Scheepsradar: schepen in de buurt via AIS op 162 MHz.", icoon: "ais", categorie: "sdr", badge: "Afgeschermd" },
+  { id: "satelliet", naam: "Satelliet", domein: "https://mijnsatelliet.lab023.nl", omschrijving: "Weersatellieten ontvangen en de beelden decoderen op 137 MHz.", icoon: "satdump", categorie: "sdr", badge: "Afgeschermd" },
   { id: "recepten",  naam: "Recepten",  domein: "https://mijnrecepten.lab023.nl",  omschrijving: "Favoriete recepten en recepten om uit te proberen, met filter op ingrediënten.", icoon: "recept" },
-  { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", badge: "Afgeschermd" },
+  { id: "syncthing", naam: "Syncthing", domein: "https://mijnsyncthing.lab023.nl", omschrijving: "Synchroniseert de notitiekluis tussen server, pc en telefoon.", icoon: "syncthing", categorie: "beheer", badge: "Afgeschermd" },
   { id: "ah",        naam: "AH",        domein: "https://mijnah.lab023.nl",        omschrijving: "Koppeling met het Albert Heijn-account voor de AI-assistent.", icoon: "boodschappen", badge: "Afgeschermd" },
   { id: "retrogames", naam: "Retrogames", domein: "https://mijnretrogames.lab023.nl", omschrijving: "Verzameling retrospellen, speelbaar in de browser.", icoon: "retrogames", categorie: "games", badge: "Afgeschermd" },
   { id: "snake",     naam: "Snake",     domein: "https://mijnsnake.lab023.nl",     omschrijving: "Het spel Snake met een gedeelde ranglijst.", icoon: "snake", categorie: "games" },
@@ -45,7 +51,7 @@ const PAGINAS = [
   { id: "rekenen",   naam: "Rekenen",   domein: "https://mijnrekenen.lab023.nl",   omschrijving: "Sommenregen en Tijdrit: oefenen met plus, min, keer en delen, met top 20.", icoon: "rekenen", categorie: "games" },
   { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
   { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", categorie: "homeautomation", badge: "Afgeschermd" },
-  { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
+  { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023", categorie: "beheer" }
 ];
 
 /* Categorieën (groepen). Elke groep is op de startpagina één kaart "Mijn" + naam
@@ -54,11 +60,21 @@ const CATEGORIEEN = [
   { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" },
   { id: "homeautomation", naam: "HomeAutomation", omschrijving: "Slimme stekkers, sensoren, camera, energieverbruik en het scherm aan de muur.", icoon: "homeassistant" },
   { id: "muziek", naam: "Muziek", omschrijving: "Internetradio, muziek ophalen en wat er nu speelt.", icoon: "muziek" },
-  { id: "games", naam: "Games", omschrijving: "Kaartspel, puzzels en oefenspellen met een ranglijst.", icoon: "retrogames" }
+  { id: "games", naam: "Games", omschrijving: "Kaartspel, puzzels en oefenspellen met een ranglijst.", icoon: "retrogames" },
+  { id: "fotografie", naam: "Fotografie", omschrijving: "Foto-opdrachten en de bespreekomgeving Polderlicht.", icoon: "licht" },
+  { id: "beheer", naam: "Beheer", omschrijving: "Server, containers, websiteverkeer, netwerkfilter, synchronisatie en uitleg over het platform.", icoon: "server" },
+  { id: "sdr", naam: "SDR", omschrijving: "Ontvangst met de SDR-sticks: vliegtuigen, schepen, hulpdiensten, sensoren en satellieten.", icoon: "sdr" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
 const ICONEN = {
+  adsb: '<path d="M10.5 20l1.5-5.5L17 10c1.2-1.2 2-2.8 1.5-3.5S15.7 6.3 14.5 7.5L10 12 4.5 13.5 3 15l4 1 1 4 1.5-1.5.5-3z"></path>',
+  rtl433: '<path d="M12 12v9"></path><circle cx="12" cy="11" r="1.2" fill="currentColor"></circle><path d="M8.5 14.5a5 5 0 0 1 0-7M15.5 7.5a5 5 0 0 1 0 7"></path><path d="M6 17a9 9 0 0 1 0-12M18 5a9 9 0 0 1 0 12"></path>',
+  p2000: '<rect x="5" y="7" width="14" height="10" rx="2"></rect><path d="M8 11h5M8 14h8"></path><circle cx="16.5" cy="10.5" r=".7" fill="currentColor"></circle>',
+  analyse: '<path d="M4 20V4M4 20h16"></path><rect x="7" y="12" width="3" height="5"></rect><rect x="12" y="8" width="3" height="9"></rect><rect x="17" y="5" width="3" height="12"></rect>',
+  ais: '<path d="M4 16h16l-2.2 4H6.2L4 16z"></path><path d="M7.5 16v-4h5.5l3.5 4"></path><path d="M12 12V8"></path><circle cx="12" cy="7.4" r=".9" fill="currentColor"></circle><path d="M9.7 5.6a3.2 3.2 0 0 1 4.6 0"></path><path d="M7.9 3.6a5.8 5.8 0 0 1 8.2 0"></path>',
+  webrx: '<path d="M2 13h2.5l1.5-4 2.5 8 2.5-11 2.5 13 2-6h3"></path><path d="M21 6v3"></path>',
+  satdump: '<g transform="rotate(-45 12 12)"><rect x="10" y="9.5" width="4" height="5" rx="1"></rect><rect x="3.5" y="10" width="5.5" height="4" rx=".6"></rect><rect x="15" y="10" width="5.5" height="4" rx=".6"></rect></g><path d="M4 20a5 5 0 0 1 5-5"></path>',
   thuis: '<path d="M4 11 12 4l8 7"></path><path d="M6 10.5V19h12v-8.5"></path><circle cx="12" cy="13" r="1.3" fill="currentColor"></circle><path d="M12 14.3V16.6M10.6 18.4 12 16.6l1.4 1.8"></path>',
   esp32: '<rect x="6" y="6" width="12" height="12" rx="1.5"></rect><path d="M9 3v3M12 3v3M15 3v3M9 18v3M12 18v3M15 18v3M3 9h3M3 12h3M3 15h3M18 9h3M18 12h3M18 15h3"></path><circle cx="12" cy="12" r="1.1" fill="currentColor"></circle>',
   epaper: '<rect x="3" y="5" width="18" height="13" rx="1.5"></rect><path d="M6 9h7M6 12h5M6 15h8"></path><circle cx="17" cy="9.5" r="1.6"></circle>',

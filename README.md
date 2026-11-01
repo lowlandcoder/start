@@ -35,12 +35,17 @@ op de startpagina. De adressen van de sites blijven ongewijzigd.
 Zoeken blijft over alle pagina's gaan, ook die in een groep, en ook op de naam van
 de groep ("weerstation" toont de drie kaarten).
 
-Op dit moment zijn er vier groepen:
+Op dit moment zijn er zeven groepen:
 
 - `weerstation`: Weer, Radar en Onweer.
 - `homeautomation`: HomeAssistant, Thuis, Verbruik, Eufy, EPaper en Zigbee.
 - `muziek`: Radio, MusicGrabber, Mornye en NowPlaying.
 - `games`: Klaverjas, Snake, Meowdoku, Retrogames, Type en Rekenen.
+- `fotografie`: Polderlicht en Agenda.
+- `beheer`: Server, Portainer, Verkeer, Pihole, Syncthing en Lab023.
+- `sdr`: ADS-B, RTL433, P2000, RTL433-analyse, WebRX, AIS en Satelliet. Dit zijn dezelfde
+  zeven experimenten als op `mijnsdr.lab023.nl`; die overzichtspagina met de status en de
+  wisselknop bestaat nog, maar heeft geen eigen kaart meer op de startpagina.
 
 ## Interactie
 
