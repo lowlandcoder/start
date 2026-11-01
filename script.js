@@ -18,18 +18,18 @@ const PAGINAS = [
   { id: "muziek",    naam: "Muziek",    domein: "https://mijnmuziek.lab023.nl",    omschrijving: "Losse nummers zoeken en downloaden naar de NAS.", icoon: "muziek", badge: "Afgeschermd" },
   { id: "mornye",    naam: "Mornye",    domein: "https://mijnmornye.lab023.nl",    omschrijving: "Muziek ophalen met Mornye, naast Muziek.", icoon: "mornye", badge: "Afgeschermd" },
   { id: "nowplaying", naam: "NowPlaying", domein: "https://nowplaying.lab023.nl", omschrijving: "Kioskscherm met albumhoes en artiest van wat er nu speelt.", icoon: "nowplaying", badge: "Afgeschermd" },
-  { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", badge: "Afgeschermd" },
-  { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik" },
+  { id: "eufy",      naam: "Eufy",      domein: "https://mijneufy.lab023.nl",      omschrijving: "Beeld van de deurbel, stilstaand en live.", icoon: "eufy", categorie: "homeautomation", badge: "Afgeschermd" },
+  { id: "verbruik",  naam: "Verbruik",  domein: "https://mijnverbruik.lab023.nl",  omschrijving: "Energieverbruik per uur, dag en maand.", icoon: "verbruik", categorie: "homeautomation" },
   { id: "server",    naam: "Server",    domein: "https://mijnserver.lab023.nl",    omschrijving: "Serverprestaties: belasting, geheugen, schijf.", icoon: "server", badge: "Afgeschermd" },
   { id: "radar",     naam: "Radar",     domein: "https://mijnradar.lab023.nl",     omschrijving: "Neerslagradar voor Nederland.", icoon: "radar", categorie: "weerstation" },
   { id: "onweer",    naam: "Onweer",    domein: "https://mijnonweer.lab023.nl",    omschrijving: "Bliksem in Nederland van de afgelopen twee uur.", icoon: "onweer", categorie: "weerstation" },
   { id: "wijn",      naam: "Wijn",      domein: "https://mijnwijn.lab023.nl",      omschrijving: "Overzicht van favoriete wijnen.", icoon: "wijn" },
   { id: "polderlicht", naam: "Polderlicht", domein: "https://polderlicht.lab023.nl", omschrijving: "Prototype van een bespreekomgeving.", icoon: "licht" },
-  { id: "homeassistant", naam: "HomeAssistant", domein: "https://mijnhomeassistant.lab023.nl", omschrijving: "Bediening van de slimme stekkers en sensoren, met eigen inlog en app.", icoon: "homeassistant", badge: "Eigen inlog" },
-  { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", badge: "Afgeschermd" },
+  { id: "homeassistant", naam: "HomeAssistant", domein: "https://mijnhomeassistant.lab023.nl", omschrijving: "Bediening van de slimme stekkers en sensoren, met eigen inlog en app.", icoon: "homeassistant", categorie: "homeautomation", badge: "Eigen inlog" },
+  { id: "zigbee",    naam: "Zigbee",    domein: "https://zigbee2mqtt.lab023.nl",   omschrijving: "Directe ingang naar de Zigbee2MQTT-beheerpagina.", icoon: "zigbee", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "pihole",    naam: "Pihole",    domein: "https://mijnpihole.lab023.nl",    omschrijving: "Blokkeert advertenties en volgers via DNS, voor het hele netwerk.", icoon: "pihole", badge: "Afgeschermd" },
   { id: "verkeer",   naam: "Verkeer",   domein: "https://mijnverkeer.lab023.nl",   omschrijving: "Realtime dashboard van het websiteverkeer (GoAccess).", icoon: "verkeer", badge: "Afgeschermd" },
-  { id: "epaper",    naam: "EPaper",    domein: "https://mijnepaper.lab023.nl", omschrijving: "Bedient het ePaper-scherm aan de muur: schema per uur.", icoon: "epaper", badge: "Afgeschermd" },
+  { id: "epaper",    naam: "EPaper",    domein: "https://mijnepaper.lab023.nl", omschrijving: "Bedient het ePaper-scherm aan de muur: schema per uur.", icoon: "epaper", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "kanban",    naam: "Kanban",    domein: "https://mijnkanban.lab023.nl",    omschrijving: "Taken op borden, gescheiden in werk en privé.", icoon: "kanban", badge: "Afgeschermd" },
   { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", badge: "Afgeschermd" },
   { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", badge: "Afgeschermd" },
@@ -44,14 +44,15 @@ const PAGINAS = [
   { id: "meowdoku",  naam: "Meowdoku",  domein: "https://mijnmeowdoku.lab023.nl",  omschrijving: "Puzzel met katten: een per rij, kolom en kleur, met top 20.", icoon: "meowdoku" },
   { id: "rekenen",   naam: "Rekenen",   domein: "https://mijnrekenen.lab023.nl",   omschrijving: "Sommenregen en Tijdrit: oefenen met plus, min, keer en delen, met top 20.", icoon: "rekenen" },
   { id: "esp32",     naam: "ESP32",     domein: "https://mijnesp32.lab023.nl",     omschrijving: "Dertig lessen met de ESP32-starterkit, van eerste upload tot verbonden apparaat.", icoon: "esp32", badge: "Afgeschermd" },
-  { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", badge: "Afgeschermd" },
+  { id: "thuis",     naam: "Thuis",     domein: "https://mijnthuis.lab023.nl",     omschrijving: "Wie er thuis is, gezien door de bluetooth-proxy in de woonkamer.", icoon: "thuis", categorie: "homeautomation", badge: "Afgeschermd" },
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
 ];
 
 /* Categorieën (groepen). Elke groep is op de startpagina één kaart "Mijn" + naam
    en opent een eigen weergave (start.lab023.nl/#<id>) met de kaarten van de groep. */
 const CATEGORIEEN = [
-  { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" }
+  { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" },
+  { id: "homeautomation", naam: "HomeAutomation", omschrijving: "Slimme stekkers, sensoren, camera, energieverbruik en het scherm aan de muur.", icoon: "homeassistant" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
