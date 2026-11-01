@@ -22,36 +22,38 @@ Elke pagina heeft een `id`, `naam` (thema-woord), `domein`, `omschrijving`, een
 
 ## Groepen
 
-De lijst `CATEGORIEEN` in `script.js` bepaalt de groepen en hun volgorde. Elke
-groep heeft een `id` en een `naam`; de kop op de pagina is "Mijn" plus die naam.
-Een pagina hoort bij een groep via `categorie` met het `id` van de groep.
-Pagina's zonder `categorie` staan zonder kop onder de groepen. Een groep zonder
-zichtbare kaarten (bij zoeken) wordt verborgen.
+De lijst `CATEGORIEEN` in `script.js` bepaalt de groepen. Elke groep heeft een
+`id`, een `naam`, een `omschrijving` en een `icoon`. Een pagina hoort bij een groep
+via `categorie` met het `id` van de groep.
 
-Op dit moment is er één groep: `weerstation` met Weer, Radar en Onweer. De
-adressen van de sites blijven ongewijzigd.
+Op de startpagina is een groep één kaart, "Mijn" plus de naam, met het aantal
+pagina's als label. Bij aanklikken opent de groep in dezelfde pagina
+(`start.lab023.nl/#<id>`), met een kop, een link "Alle pagina's" en de kaarten van de
+groep. De terugknop van de browser werkt. Een pagina zonder `categorie` staat zelf
+op de startpagina. De adressen van de sites blijven ongewijzigd.
 
-`zigbee2mqtt` staat met `extern: true` in de lijst: de kaart toont alleen
-"Zigbee2MQTT" zonder het voorvoegsel "Mijn", omdat de beheerpagina de eigen
-interface van zigbee2mqtt is en niet de Lab023-huisstijl volgt. De pagina
-staat achter een wachtwoord (badge "Afgeschermd"), zie `mijnhuis/HANDLEIDING.md`.
+Zoeken blijft over alle pagina's gaan, ook die in een groep, en ook op de naam van
+de groep ("weerstation" toont de drie kaarten).
 
-`lokaal: true` is voor een onderdeel zonder publieke pagina (geen `domein`);
-de kaart krijgt dan geen link. Op dit moment gebruikt geen enkele pagina dit.
-
-`mijnradar`, `mijnwijn` en `polderlicht` volgen de gedeelde huisstijl nog niet
-volledig (zie `OVERZICHT.md`); de kaarten linken al wel naar hun subdomein.
+Op dit moment is er één groep: `weerstation` met Weer, Radar en Onweer.
 
 ## Interactie
 
 - Zoekveld filtert de kaarten direct op naam en omschrijving.
 - Sneltoets `/` focust het zoekveld, `Escape` maakt het weer leeg.
-- Binnen een groep volgt de volgorde van de kaarten de meest recent bezochte
-  pagina (`localStorage`, per apparaat). De groepen zelf staan vast.
+- De volgorde van de kaarten volgt de meest recent bezochte pagina
+  (`localStorage`, per apparaat). Een groepskaart telt mee als een van de
+  kaarten uit de groep is bezocht.
 
 ## Databron
 
 Geen externe databron. De inhoud staat vast in `PAGINAS` in `script.js`.
+
+## Cache
+
+`index.html` laadt `style.css` en `script.js` met `?v=<datum>`. Verhoog die datum bij elke
+wijziging in een van die twee bestanden, anders kan een browser de oude opmaak met het
+nieuwe script combineren.
 
 ## Publiceren
 

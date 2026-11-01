@@ -58,31 +58,41 @@
   background: rgba(5, 18, 39, .8);
 }
 
-/* Kaartrooster: groepen onder elkaar, binnen een groep een raster van kaarten */
+/* Kaartrooster */
 .rooster {
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
 }
+@media (max-width: 760px) { .rooster { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .rooster { grid-template-columns: 1fr; } }
 
+/* Kop van een geopende groep */
+.groepblok { margin-bottom: 20px; }
+.terug {
+  display: inline-block;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.terug:hover,
+.terug:focus-visible { color: var(--accent); }
+.terug:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
 .groep-kop {
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -.01em;
-  margin-bottom: 12px;
 }
 .groep-kop em {
   color: var(--accent);
   font-style: normal;
 }
-
-.groep-rooster {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+.groep-omschrijving {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 4px;
 }
-@media (max-width: 760px) { .groep-rooster { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .groep-rooster { grid-template-columns: 1fr; } }
 
 .pagina-kaart {
   position: relative;
@@ -103,8 +113,6 @@
   background: rgba(255, 255, 255, .05);
 }
 .pagina-kaart:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-.pagina-kaart.verborgen { display: none; }
 
 .pagina-kaart.uitgeschakeld {
   cursor: default;

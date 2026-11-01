@@ -8,8 +8,9 @@
    eventueel badge ("Afgeschermd" e.d.), extern (true = geen "Mijn"-voorvoegsel,
    voor een pagina die niet de eigen huisstijl gebruikt, zoals zigbee2mqtt)
    en lokaal (true = geen directe link, alleen bereikbaar binnen het eigen
-   netwerk). Met categorie (id uit CATEGORIEEN) komt de kaart onder een kop;
-   zonder categorie staat de kaart na de groepen.
+   netwerk). Met categorie (id uit CATEGORIEEN) staat de kaart in een groep: op de
+   startpagina is dan alleen de groepskaart te zien. Zonder categorie staat de
+   kaart zelf op de startpagina.
    ================================================================ */
 const PAGINAS = [
   { id: "weer",      naam: "Weer",      domein: "https://mijnweer.lab023.nl",      omschrijving: "Persoonlijke weersite op basis van locatie.", icoon: "weer", categorie: "weerstation" },
@@ -47,9 +48,10 @@ const PAGINAS = [
   { id: "lab023",    naam: "Lab023",    domein: "https://mijnlab023.lab023.nl", omschrijving: "Uitleg over het platform zelf: twee servers, de antennes en alle pagina's.", icoon: "lab023" }
 ];
 
-/* Categorieën in vaste volgorde. De naam komt na "Mijn" in de kop van de groep. */
+/* Categorieën (groepen). Elke groep is op de startpagina één kaart "Mijn" + naam
+   en opent een eigen weergave (start.lab023.nl/#<id>) met de kaarten van de groep. */
 const CATEGORIEEN = [
-  { id: "weerstation", naam: "Weerstation" }
+  { id: "weerstation", naam: "Weerstation", omschrijving: "Weer, neerslagradar en onweer bij elkaar.", icoon: "weer" }
 ];
 
 /* Lijnicoontjes, 24×24, zelfde stijl als de rest van het platform. */
@@ -91,6 +93,7 @@ const ICONEN = {
 
 const OPSLAG_BEZOCHT = "start.laatstbezocht";
 const $ = (id) => document.getElementById(id);
+const TITEL_START = document.title;
 
 /* Begroeting op basis van het tijdstip van de dag */
 function zetGroet() {
@@ -120,9 +123,9 @@ function bewaarBezoek(id) {
   bezocht[id] = Date.now();
   try { localStorage.setItem(OPSLAG_BEZOCHT, JSON.stringify(bezocht)); } catch (e) {}
 }
-function gesorteerdeLijst() {
+function gesorteerd(lijst) {
   const bezocht = laadBezocht();
-  return [...PAGINAS].sort((a, b) => (bezocht[b.id] || 0) - (bezocht[a.id] || 0));
+  return [...lijst].sort((a, b) => (bezocht[b.id] || 0) - (bezocht[a.id] || 0));
 }
 
 /* Eén kaart opbouwen */
@@ -131,8 +134,10 @@ function maakKaart(pagina) {
   kaart.className = "kaart pagina-kaart" + (pagina.lokaal ? " uitgeschakeld" : "");
   if (!pagina.lokaal) {
     kaart.href = pagina.domein;
-    kaart.target = "_blank";
-    kaart.rel = "noopener";
+    if (!pagina.groep) {
+      kaart.target = "_blank";
+      kaart.rel = "noopener";
+    }
     kaart.dataset.id = pagina.id;
   }
   kaart.dataset.naam = pagina.naam.toLowerCase();
@@ -167,67 +172,84 @@ function maakKaart(pagina) {
   }
 
   if (!pagina.lokaal) {
-    kaart.addEventListener("click", () => bewaarBezoek(pagina.id));
+    kaart.addEventListener("click", () => {
+      bewaarBezoek(pagina.id);
+      if (pagina.categorie) bewaarBezoek("groep:" + pagina.categorie);
+    });
   }
   return kaart;
 }
 
-/* Eén groep opbouwen: een sectie met (eventueel) een kop en een raster kaarten */
-function maakGroep(kopNaam, paginas, id) {
-  const groep = document.createElement("section");
-  groep.className = "groep";
-  groep.dataset.groep = id;
-  if (kopNaam) {
-    const kop = document.createElement("h2");
-    kop.className = "groep-kop";
-    kop.innerHTML = `Mijn<em>${kopNaam}</em>`;
-    groep.appendChild(kop);
-    groep.setAttribute("aria-label", "Mijn" + kopNaam);
-  }
-  const raster = document.createElement("div");
-  raster.className = "groep-rooster";
-  paginas.forEach((pagina) => raster.appendChild(maakKaart(pagina)));
-  groep.appendChild(raster);
-  return groep;
+/* Een groep als kaart voor de startpagina */
+function groepAlsKaart(categorie) {
+  const aantal = PAGINAS.filter((p) => p.categorie === categorie.id).length;
+  return {
+    id: "groep:" + categorie.id,
+    naam: categorie.naam,
+    domein: "#" + categorie.id,
+    omschrijving: categorie.omschrijving,
+    icoon: categorie.icoon,
+    badge: aantal + " pagina's",
+    groep: true
+  };
 }
 
-/* Rooster opbouwen: eerst de categorieën in vaste volgorde, daarna de kaarten
-   zonder categorie. Binnen een groep geldt de volgorde van laatst bezocht. */
-function bouwRooster() {
+function categorieNaam(pagina) {
+  const categorie = CATEGORIEEN.find((c) => c.id === pagina.categorie);
+  return categorie ? categorie.naam.toLowerCase() : "";
+}
+
+function huidigeGroep() {
+  const id = location.hash.replace(/^#/, "");
+  return CATEGORIEEN.find((c) => c.id === id) || null;
+}
+
+/* Kop boven de kaarten als een groep open staat, met een link terug */
+function zetGroepkop(groep) {
+  const blok = $("groepkop");
+  if (!groep) {
+    blok.hidden = true;
+    blok.innerHTML = "";
+    document.title = TITEL_START;
+    return;
+  }
+  blok.innerHTML = `<a class="terug" href="#">\u2190 Alle pagina's</a>`
+    + `<h2 class="groep-kop">Mijn<em>${groep.naam}</em></h2>`
+    + `<p class="groep-omschrijving">${groep.omschrijving}</p>`;
+  blok.hidden = false;
+  document.title = "Mijn" + groep.naam + " | Lab023";
+}
+
+/* Rooster tonen. Met een zoekterm: alle pagina's die passen, ook die in een groep.
+   Zonder zoekterm: de inhoud van de open groep, of de startpagina met
+   groepskaarten en losse kaarten. Volgorde: laatst bezocht. */
+function toonRooster() {
+  const term = $("zoekveld").value.trim().toLowerCase();
+  const groep = huidigeGroep();
+  let kaarten;
+  if (term) {
+    kaarten = gesorteerd(PAGINAS).filter((p) => p.naam.toLowerCase().includes(term)
+      || p.omschrijving.toLowerCase().includes(term)
+      || categorieNaam(p).includes(term));
+  } else if (groep) {
+    kaarten = gesorteerd(PAGINAS.filter((p) => p.categorie === groep.id));
+  } else {
+    const groepen = CATEGORIEEN.filter((c) => PAGINAS.some((p) => p.categorie === c.id)).map(groepAlsKaart);
+    const losse = PAGINAS.filter((p) => !CATEGORIEEN.some((c) => c.id === p.categorie));
+    kaarten = gesorteerd([...groepen, ...losse]);
+  }
   const rooster = $("rooster");
   rooster.innerHTML = "";
-  const lijst = gesorteerdeLijst();
-  CATEGORIEEN.forEach((categorie) => {
-    const paginas = lijst.filter((p) => p.categorie === categorie.id);
-    if (paginas.length) rooster.appendChild(maakGroep(categorie.naam, paginas, categorie.id));
-  });
-  const overig = lijst.filter((p) => !CATEGORIEEN.some((c) => c.id === p.categorie));
-  if (overig.length) rooster.appendChild(maakGroep("", overig, "overig"));
-}
-
-/* Zoekfilter: typen filtert de kaarten direct op naam en omschrijving */
-function filterRooster() {
-  const term = $("zoekveld").value.trim().toLowerCase();
-  const kaarten = document.querySelectorAll(".pagina-kaart");
-  let zichtbaar = 0;
-  kaarten.forEach((kaart) => {
-    const treft = !term
-      || kaart.dataset.naam.includes(term)
-      || kaart.dataset.omschrijving.includes(term);
-    kaart.classList.toggle("verborgen", !treft);
-    if (treft) zichtbaar++;
-  });
-  document.querySelectorAll(".groep").forEach((groep) => {
-    groep.hidden = !groep.querySelector(".pagina-kaart:not(.verborgen)");
-  });
-  $("geenResultaat").hidden = zichtbaar !== 0;
+  kaarten.forEach((pagina) => rooster.appendChild(maakKaart(pagina)));
+  zetGroepkop(term ? null : groep);
+  $("geenResultaat").hidden = kaarten.length !== 0;
 }
 
 /* Sneltoets: "/" focust het zoekveld, Escape maakt het weer leeg */
 function zetSneltoetsen() {
   document.addEventListener("keydown", (e) => {
     if (e.target === $("zoekveld")) {
-      if (e.key === "Escape") { $("zoekveld").value = ""; filterRooster(); $("zoekveld").blur(); }
+      if (e.key === "Escape") { $("zoekveld").value = ""; toonRooster(); $("zoekveld").blur(); }
       return;
     }
     if (e.key === "/") {
@@ -242,6 +264,7 @@ function zetSneltoetsen() {
 zetGroet();
 zetKlok();
 setInterval(zetKlok, 60000);
-bouwRooster();
-$("zoekveld").addEventListener("input", filterRooster);
+toonRooster();
+$("zoekveld").addEventListener("input", toonRooster);
+window.addEventListener("hashchange", () => { toonRooster(); window.scrollTo(0, 0); });
 zetSneltoetsen();
