@@ -43,9 +43,10 @@ Op dit moment zijn er zeven groepen:
 - `games`: Klaverjas, Snake, Meowdoku, Retrogames, Type en Rekenen.
 - `fotografie`: Polderlicht en Agenda.
 - `beheer`: Server, Portainer, Verkeer, Pihole, Syncthing en Lab023.
-- `sdr`: ADS-B, RTL433, P2000, RTL433-analyse, WebRX, AIS en Satelliet. Dit zijn dezelfde
-  zeven experimenten als op `mijnsdr.lab023.nl`; die overzichtspagina met de status en de
-  wisselknop bestaat nog, maar heeft geen eigen kaart meer op de startpagina.
+- `sdr`: Stickwissel, ADS-B, RTL433, P2000, RTL433-analyse, WebRX, AIS en Satelliet. De
+  zeven experimenten zijn dezelfde als op `mijnsdr.lab023.nl`. De kaart Stickwissel opent die
+  overzichtspagina met de status en de wisselknoppen. Die kaart is op 06-11-2026 toegevoegd,
+  want sinds de komst van de groepen was de pagina niet meer vanaf de startpagina te bereiken.
 
 ## Interactie
 

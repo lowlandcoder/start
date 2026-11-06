@@ -34,6 +34,7 @@ const PAGINAS = [
   { id: "kanban",    naam: "Kanban",    domein: "https://mijnkanban.lab023.nl",    omschrijving: "Taken op borden, gescheiden in werk en privé.", icoon: "kanban", badge: "Afgeschermd" },
   { id: "agenda",    naam: "Agenda",    domein: "https://mijnagenda.lab023.nl",    omschrijving: "Foto-opdrachten met overzicht per mail.", icoon: "agenda", categorie: "fotografie", badge: "Afgeschermd" },
   { id: "portainer", naam: "Portainer", domein: "https://mijnportainer.lab023.nl", omschrijving: "Containerbeheer voor de servers lab023 en sdr.", icoon: "portainer", categorie: "beheer", badge: "Afgeschermd" },
+  { id: "stickwissel", naam: "Stickwissel", domein: "https://mijnsdr.lab023.nl", omschrijving: "Stand van de ontvangers en de gedeelde stick wisselen.", icoon: "sdr", categorie: "sdr", badge: "Afgeschermd" },
   { id: "adsb", naam: "ADS-B", domein: "https://mijnadsb.lab023.nl", omschrijving: "Vliegtuigen volgen via ADS-B-signalen op 1090 MHz.", icoon: "adsb", categorie: "sdr", badge: "Afgeschermd" },
   { id: "rtl433", naam: "RTL433", domein: "https://mijnrtl433.lab023.nl", omschrijving: "Sensoren en meters uitlezen op de 433 MHz-band.", icoon: "rtl433", categorie: "sdr", badge: "Afgeschermd" },
   { id: "p2000", naam: "P2000", domein: "https://mijnp2000.lab023.nl", omschrijving: "Meldingen van de hulpdiensten via het P2000-netwerk.", icoon: "p2000", categorie: "sdr", badge: "Afgeschermd" },
